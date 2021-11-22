@@ -19,6 +19,7 @@ val gitVersion: Closure<String> by extra
 repositories {
     maven(url = "https://hub.spigotmc.org/nexus/content/repositories/snapshots/")
     maven(url = "https://oss.sonatype.org/content/groups/public/")
+    maven(url = "https://s01.oss.sonatype.org/content/repositories/snapshots/")
     mavenCentral()
 }
 
@@ -26,9 +27,9 @@ val shadowImplementation: Configuration by configurations.creating
 configurations["implementation"].extendsFrom(shadowImplementation)
 
 dependencies {
-    shadowImplementation(kotlin("stdlib"))
+    implementation(kotlin("stdlib"))
     implementation("org.spigotmc:spigot-api:1.17.1-R0.1-SNAPSHOT")
-    implementation(kotlin("stdlib-jdk8"))
+    shadowImplementation("dev.s7a:ktSpigot-v1_17:1.0.0-SNAPSHOT")
 }
 
 configure<BukkitPluginDescription> {
