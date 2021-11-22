@@ -1,5 +1,6 @@
 package dev.s7a.bow
 
+import dev.s7a.bow.listener.BowListener
 import dev.s7a.bow.listener.DoubleJumpListener
 import dev.s7a.bow.listener.EventListener
 import dev.s7a.spigot.listener.registerListener
@@ -21,5 +22,6 @@ class AcrobatSniper : JavaPlugin() {
     override fun onEnable() {
         registerListener(EventListener)
         registerListener(DoubleJumpListener)
+        registerListener(BowListener)
     }
 }
